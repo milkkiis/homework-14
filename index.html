@@ -1,0 +1,101 @@
+<!-- Адаптивная вёрстка - это подход к созданию веб-страниц, при котором сайт
+автоматически подстраивается под размер экрана устройства 
+
+Она улучшает пользовательский опыт, потому что человеку не приходится масштабировать 
+страницу вручную или сталкиваться со сломанной раскладкой.
+
+Резиновость достигается за счёт использования относительных 
+единиц измерения вместо фиксированных величин:
+% задаёт ширину блока относительно родителя
+em привязывает размер к шрифту родительского элемента
+vw/vh привязывают размер к ширине или высоте окна браузера
+
+Недостатки:
+Сложность контроля над внешним видом на очень больших экранах,
+блоки могут растягиваться настолько, что текст становится трудно 
+читать из-за слишком длинных строк.
+
+Возможное растягивание элементов до неестественных пропорций, 
+из-за чего изображения или колонки текста выглядят искажённо.
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Адаптивная резиновая вёрстка</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="wrapper">
+        <div class="logo">Резиновая вёрстка</div>
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        </div>
+    </header>
+
+    <nav>
+        <div class="wrapper">
+        <ul id="navList">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Портфолио</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="wrapper">
+        <section>
+            <h1>Адаптивная резиновая вёрстка</h1>
+            <div class="content">
+            <div class="card">
+                <img src="./435.jpg" alt="Изображение 1">
+                <div class="card-body">
+                <h2>Карточка 1</h2>
+                <p>Блок с изображением, которое масштабируется вместе с окном браузера благодаря max-width: 100%.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./435.jpg" alt="Изображение 2">
+                <div class="card-body">
+                <h2>Карточка 2</h2>
+                <p>Ширина и шрифты заданы в относительных единицах (%, rem), поэтому макет остаётся резиновым.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./435.jpg" alt="Изображение 3">
+                <div class="card-body">
+                <h2>Карточка 3</h2>
+                <p>Точки перелома 1200px, 992px, 768px и 480px меняют раскладку и стили под размер экрана.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrapper">
+        <p>&copy; 2026.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('burgerBtn').addEventListener('click', function () {
+        document.getElementById('navList').classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>
